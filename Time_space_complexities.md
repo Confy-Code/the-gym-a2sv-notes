@@ -11,13 +11,13 @@ Instead of measuring execution time in seconds (which depends on hardware, progr
 - [Time Complexity](#time-Complexity)
 - [Cases of Time Complexity](#cases-of-time-complexity)
 - [How to Analyze Time Complexity](#how-to-analyze-time-complexity)
-- [Big O Simplification Rules](#-big-o-simplification-rules)
-- [Common Time Complexities](#-common-time-complexities)
-- [Space Complexity](#-space-complexity)
-- [Types of Space Complexity](#-types-of-space-complexity)
-- [Time vs Space Trade-off](#-time-vs-space-trade-off)
-- [Common Programming Errors](#-common-programming-errors)
-- [Complexity Cheat Sheet](#-complexity-cheat-sheet)
+- [Big O Simplification Rules](#big-o-simplification-rules)
+- [Common Time Complexities](#common-time-complexities)
+- [Space Complexity](#space-complexity)
+- [Types of Space Complexity](#types-of-space-complexity)
+- [Time vs Space Trade-off](#time-vs-space-trade-off)
+- [Common Programming Errors](#common-programming-errors)
+- [Complexity Cheat Sheet](#complexity-cheat-sheet)
 
 ---
 
