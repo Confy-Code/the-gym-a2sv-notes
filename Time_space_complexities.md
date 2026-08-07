@@ -1,8 +1,10 @@
-# ⏱️ Time and Space Complexities
+# Time and Space Complexities
 
 Understanding **time complexity** and **space complexity** is one of the fundamental skills in algorithms, data structures, and software engineering. These concepts help us estimate how efficiently an algorithm performs as the size of its input grows.
 
 Instead of measuring execution time in seconds (which depends on hardware, programming language, and compiler optimizations), we analyze how the **number of operations** and **memory usage** grow with the input size **n**.
+
+> Note that this whole document uses Python Programming Language, but the complexities here are applied to anywhere else; only small differences in-between.
 
 ---
 
