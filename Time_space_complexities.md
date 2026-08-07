@@ -8,7 +8,7 @@ Instead of measuring execution time in seconds (which depends on hardware, progr
 
 # 📚 Table of Contents
 
-- [Time Complexity](#-Time Complexity)
+- [Time Complexity](#-Time-Complexity)
 - [Cases of Time Complexity](#-cases-of-time-complexity)
 - [How to Analyze Time Complexity](#-how-to-analyze-time-complexity)
 - [Big O Simplification Rules](#-big-o-simplification-rules)
