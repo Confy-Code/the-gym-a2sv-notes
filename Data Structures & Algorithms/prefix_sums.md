@@ -363,28 +363,28 @@ Look for:
 ---
 
 # 7. Big Picture
-
-                      PREFIX SUM PATTERN
-                             │
-               ┌─────────────┴─────────────┐
-               │                           │
-              1D                           2D
-               │                           │
-        ┌──────┴──────┐             ┌──────┴──────┐
-        │             │             │             │
-    Inclusive     Exclusive     Inclusive     Exclusive
-        │             │             │             │
-   P[R]-P[L-1]   P[R+1]-P[L]   Inclusion-     +1 row &
-                               Exclusion      +1 column
-               │
-               ▼
-        Range Updates
-               │
-               ▼
-        Difference Array
-               │
-               ▼
-           Prefix Sum
+    
+                          PREFIX SUM PATTERN
+                                 │
+                   ┌─────────────┴─────────────┐
+                   │                           │
+                  1D                           2D
+                   │                           │
+            ┌──────┴──────┐             ┌──────┴──────┐
+            │             │             │             │
+        Inclusive     Exclusive     Inclusive     Exclusive
+            │             │             │             │
+       P[R]-P[L-1]   P[R+1]-P[L]   Inclusion-     +1 row &
+                                   Exclusion      +1 column
+                   │
+                   ▼
+            Range Updates
+                   │
+                   ▼
+            Difference Array
+                   │
+                   ▼
+               Prefix Sum
 
 ---
 
