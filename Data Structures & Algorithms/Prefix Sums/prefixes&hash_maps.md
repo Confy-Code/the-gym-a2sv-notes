@@ -2,9 +2,9 @@
 
 Sometimes, we don't only need to know **whether** a value has appeared — we need to know **how many times** it has appeared.
 
-### Prefix Sum Example — LeetCode 560
+### Prefix Sum Examples — LeetCode 560 & LeetCode 974
 
-> [Assess the question and our answer here](https://github.com/Confy-Code/My_Leetcode_solutions/tree/main/0560-subarray-sum-equals-k)
+> [Assess LeetCode 560's solution](https://github.com/Confy-Code/My_Leetcode_solutions/tree/main/0560-subarray-sum-equals-k)
 
 In `Subarray Sum Equals K`, each prefix sum represents a **boundary**.
 
@@ -49,6 +49,13 @@ Average lookup/insertion:
     O(1)
 
 This avoids repeatedly searching through previous values, which can turn an `O(n²)` solution into an `O(n)` solution.
+
+> However for LeetCode 974, there is a little difference
+
+For LeetCode 974, the `needed` is replaced by the `remainder`. The numbers having the same remainder to a certain number `k`, It is mathematically proven that their difference is divisible by `k`. So in the hash map, we search for the sum having the same `remainder`, as their difference is divisible by `k` 
+
+> Example: As `10 % 3 = 1` and `1 % 3 = 1`, `10 - 1` is equal to `9` which is divisible by `3`. `10 - 4 = 6` is the same case, as `4 % 3 = 1` too.
+> > [Assess LeetCode 974's solution](https://github.com/Confy-Code/My_Leetcode_solutions/tree/main/0974-subarray-sums-divisible-by-k)
 
 ### Patterns That Suggest Recording in a Hash Map
 
