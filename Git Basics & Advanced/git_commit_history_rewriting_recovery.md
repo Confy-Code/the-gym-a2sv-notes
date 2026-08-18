@@ -6,7 +6,7 @@
 
 # Table of Contents
 
-1. [Amending Commits](#1.-amending-commits)
+1. [Amending Commits](#-amending-commits)
 2. Interactive Rebase
 3. Squashing Commits
 4. Splitting Commits
@@ -19,7 +19,7 @@
 
 ---
 
-# 1. Amending Commits
+# Amending Commits
 
 `git commit --amend` allows you to modify the **most recent commit**.
 
