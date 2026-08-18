@@ -1,9 +1,3 @@
-### PREFIX SUMS -- [Difference Arrays & Circular Shifting]
-
-> Prefix sums are a preprocessing technique used to efficiently calculate **range sums** and handle repeated operations over arrays or matrices.
-
----
-
 ### 1. Difference Arrays
 
 > **Key idea:** Deal with only the **ends/boundaries** of a range instead of updating every element inside it.
