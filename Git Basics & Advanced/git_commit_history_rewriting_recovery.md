@@ -6,16 +6,16 @@
 
 # Table of Contents
 
-1.[Amending Commits](#amending-commits)
-2. Interactive Rebase
-3. Squashing Commits
-4. Splitting Commits
-5. Dropping Commits
-6. Reordering Commits
-7. Cherry-picking Commits
-8. Git Reflog
-9. Useful Commands
-10. Best Practices
+1. [Amending Commits](#amending-commits)
+2. [Interactive Rebase](#Interactive-Rebase)
+3. [Squashing Commits](#Squashing-Commits)
+4. [Splitting Commits](#Splitting-Commits)
+5. [Dropping Commits](#Dropping-Commits)
+6. [Reordering Commits](#Reordering-Commits)
+7. [Cherry-picking Commits](#Cherry-picking-Commits)
+8. [Git Reflog](#Git-Reflog)
+9. [Useful Commands](#Useful-Commands)
+10. [Best Practices](#Best-Practices)
 
 ---
 
@@ -47,7 +47,7 @@ Git replaces the previous commit with a new one (new commit hash).
 
 ---
 
-# 2. Interactive Rebase
+# Interactive Rebase
 
 Interactive rebase allows you to **rewrite commit history**.
 
@@ -89,7 +89,7 @@ Git executes these commands **from top to bottom**.
 
 ---
 
-# 3. Squashing Commits
+# Squashing Commits
 
 Squashing combines multiple commits into one.
 
@@ -154,7 +154,7 @@ fixup C
 
 ---
 
-# 4. Splitting a Commit
+# Splitting a Commit
 
 Suppose one commit contains unrelated changes.
 
@@ -249,7 +249,7 @@ This lets you split changes inside the same file into different commits.
 
 ---
 
-# 5. Dropping Commits
+# Dropping Commits
 
 Delete a commit from history.
 
@@ -274,7 +274,7 @@ Use only for commits you no longer need.
 
 ---
 
-# 6. Reordering Commits
+# Reordering Commits
 
 Git replays commits **in the order they appear**.
 
@@ -304,7 +304,7 @@ Be careful when commits depend on each other.
 
 ---
 
-# 7. Cherry-picking Commits
+# Cherry-picking Commits
 
 Cherry-pick copies **specific commits** from another branch.
 
@@ -375,7 +375,7 @@ git cherry-pick --no-commit <commit_hash>
 
 ---
 
-# 8. Git Reflog
+# Git Reflog
 
 Unlike `git log`, reflog records **every movement of HEAD**.
 
@@ -430,7 +430,7 @@ This is one of the safest recovery techniques in Git.
 
 ---
 
-# 9. Useful Commands
+# Useful Commands
 
 ## View history
 
@@ -538,7 +538,7 @@ git add -p
 
 ---
 
-# 10. Best Practices
+# Best Practices
 
 * Write meaningful commit messages.
 
