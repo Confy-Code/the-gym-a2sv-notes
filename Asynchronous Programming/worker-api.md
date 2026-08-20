@@ -1,4 +1,4 @@
-# 17. WEB WORKER API
+# WEB WORKER API
 
 ## 1. Core Idea
 
