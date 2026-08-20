@@ -60,3 +60,13 @@
 | Shared Worker        | Can be shared by multiple browsing contexts            |
 | Service Worker       | Used for capabilities such as caching/offline behavior |
 | Node.js              | Uses `worker_threads` and `parentPort`                 |
+
+
+24. `.then()` → **continue when Promise finishes**
+25. `return Promise` inside `.then()` → **chain another Promise**
+26. `Promise.all()` → **wait for everything**
+27. `Promise.race()` → **first settled Promise wins**
+28. `async` → **function returns a Promise**
+29. await` → **wait for a Promise inside an async function**
+30. try...catch` → **handle rejected Promises**
+31. Independent tasks → **start them together instead of unnecessarily awaiting one before starting another**
