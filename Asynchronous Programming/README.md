@@ -70,3 +70,19 @@
 29. await` → **wait for a Promise inside an async function**
 30. try...catch` → **handle rejected Promises**
 31. Independent tasks → **start them together instead of unnecessarily awaiting one before starting another**
+32. `fetch(url)` → **GET by default**
+33. `POST` → **send/create data**
+34. `GET` → **retrieve data**
+35. `PUT` → **replace/update whole resource**
+36. `PATCH` → **partially update resource**
+37. `DELETE` → **remove resource**
+38. `fetch()` → **returns a Promise**
+39. `response.json()` → **parse JSON body**
+40. `response.ok` → **check 2xx success**
+41. `response.status` → **get exact HTTP status**
+42. `204` → **success with no response body**
+43. `JSON.stringify()` → **JS object → JSON string**
+44. `async/await` → **clean way to consume Fetch Promises**
+45. `POST` → **usually non-idempotent**
+46. `GET`, `PUT`, `DELETE` → **idempotent**
+47. `PATCH` → **depends on the operation**
