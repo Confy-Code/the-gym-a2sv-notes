@@ -50,18 +50,22 @@ const results = await Promise.all([fetchUsers(), fetchPosts(), fetchComments()
 
 A Promise executor receives two functions:
 
+```js
 const promise = new Promise((resolve, reject) => {
 // work
 })
+```
 
 * First parameter → `resolve`
 * Second parameter → `reject`
 
 If you don't need one of the parameters, use `_` as a placeholder:
 
+```js
 new Promise((resolve, _) => {
 resolve("Done")
 })
+```
 
 * `_` has no special meaning in JavaScript; it is simply a conventional name meaning **"I don't need this parameter."**
 
@@ -81,7 +85,6 @@ const data = await response.json()}
 
 console.log(data)
 ```
-
 }
 
 ---
@@ -91,7 +94,10 @@ console.log(data)
 * Put `await` **before a function/expression that returns a Promise**.
 
 Example:
+```js 
 const response = await fetch("/api/users")
+
+```
 
 * `fetch()` returns a Promise.
 * `await` waits for that Promise to settle and gives you its fulfilled value.
