@@ -1,5 +1,5 @@
-## ASYNCHRONOUS PROGRAMMING - BROWSER ASYNC APIs
-> **Note:** These are quick-reference notes on browser APIs and asynchronous JavaScript, covering `document.readyState`, network throttling, XHR, Fetch API, error handling, and Promise-related tools. They are intended for revision and quick reference rather than as a complete lecture.
+## ASYNCHRONOUS PROGRAMMING - XHR API & OTHER ANALOG PROMISES (J & Q QUERY PROMISES)
+> **Note:** These are quick-reference notes on browser APIs and asynchronous JavaScript, covering `document.readyState`, network throttling, XHR, error handling, and Promise-related tools. They are intended for revision and quick reference rather than as a complete lecture.
 ---
 
 ### `document.readyState`
@@ -63,6 +63,8 @@ xhr.send();
 ```
 
 ### Fetch API
+
+> Fetch API will be later discussed in deep in other section of this same folder.
 
 `fetch()` is the modern native API and is **Promise-based**.
 
