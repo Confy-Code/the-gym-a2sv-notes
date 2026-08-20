@@ -1,6 +1,6 @@
 ## Asynchronous Programming - Promises
 
-A **Promise** represents the eventual result of an asynchronous operation.
+> A **Promise** represents the eventual (failure or success) result of an asynchronous operation.
 
 ### 1. Promise States
 
