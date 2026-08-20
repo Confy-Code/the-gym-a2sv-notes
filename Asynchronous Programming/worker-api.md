@@ -239,7 +239,7 @@ Main Thread
 Web Page
 ```
 
-## 10. Terminating a Worker
+## 9. Terminating a Worker
 
 A worker can be stopped from the main thread:
 
@@ -255,7 +255,7 @@ self.close();
 
 > Use this when the worker is no longer needed.
 
-## 11. Dedicated vs Shared Workers
+## 10. Dedicated vs Shared Workers
 
 ### Dedicated Worker
 
@@ -272,7 +272,7 @@ This is the most common type when learning or implementing background computatio
 A **Shared Worker** can communicate with multiple browsing contexts.
 > Shared workers use a communication `port` rather than the simpler dedicated-worker interface.
 
-## 12. Service Workers
+## 11. Service Workers
 
 A **Service Worker** is another type of worker used mainly for web-app capabilities such as:
 
@@ -287,7 +287,7 @@ A **Service Worker** is another type of worker used mainly for web-app capabilit
 
 ---
 
-## 13. Node.js Worker Threads
+## 12. Node.js Worker Threads
 
 Browser Web Workers and Node.js workers use different APIs.
 
