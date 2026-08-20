@@ -1,6 +1,6 @@
 # Asynchronous JavaScript — Quick Reference
 
-> **Purpose:** Quick revision notes for understanding how JavaScript handles operations that finish later, especially **Promises, callbacks, Events, XHR, and Fetch**.
+> **Purpose:** Quick revision notes for understanding how JavaScript handles operations that finish later, especially **Promises, callbacks, Events, XHR, Web worker APIs, and Fetch**.
 
 ---
 
@@ -43,3 +43,20 @@
 20. **Network throttling** → intentionally simulate slower network conditions.
 21. Native JavaScript Promises are generally preferred over older Promise libraries.
 22. **Polyfill** → provides missing functionality for older environments.
+23. **Web Worker APIs**
+
+| Concept              | Remember                                               |
+| -------------------- | ------------------------------------------------------ |
+| Web Worker           | Runs JavaScript in another thread                      |
+| Main Thread          | Handles UI, DOM, rendering, etc.                       |
+| Worker Thread        | Handles background/expensive computation               |
+| `postMessage()`      | Sends data                                             |
+| `onmessage`          | Handles received messages                              |
+| `event.data`         | Contains received data                                 |
+| Callback             | Function called later when something happens           |
+| DOM                  | Workers cannot directly manipulate it                  |
+| `worker.terminate()` | Stops a worker from the main thread                    |
+| Dedicated Worker     | Worker belonging to one page/script                    |
+| Shared Worker        | Can be shared by multiple browsing contexts            |
+| Service Worker       | Used for capabilities such as caching/offline behavior |
+| Node.js              | Uses `worker_threads` and `parentPort`                 |
