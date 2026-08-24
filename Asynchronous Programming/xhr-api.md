@@ -89,6 +89,9 @@ fetch("/api/data")
 | Built-in progress events       | Simpler response handling   |
 | Commonly uses callbacks/events | Uses `.then()` / `.catch()` |
 
+> With fetch(), we usually parse the `response` by calling `response.json()`.
+> With XHR, we often parse the response text (now embedded in `xhr` object) with `JSON.parse(xhr.responseText)`.
+
 **Important advantage of XHR:**
 
 XHR provides convenient **progress events**, which can be useful for tracking upload/download progress.
