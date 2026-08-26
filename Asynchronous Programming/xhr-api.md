@@ -45,6 +45,10 @@ This is particularly useful when testing whether asynchronous code behaves corre
 ### XMLHttpRequest (XHR)
 
 XHR is the older browser API for making HTTP requests.
+> By browser API, this means that you have to run it inside the browser.
+> Otherwise, you will be requires to install dedicated Node libraries.
+> As some pages may block the network connections due to their CSP, consider running it on blank page in Chrome.
+> Navigate to the blank page by `about:blank` in Chrome.
 
 ```javascript
 const xhr = new XMLHttpRequest();
