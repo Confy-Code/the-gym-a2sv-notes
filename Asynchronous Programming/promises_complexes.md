@@ -108,6 +108,8 @@ const response = fetch("/api/users")
 
 * `response` is a **Promise**, not the actual response.
 
+> This art of removing and putting `await` is often confusing. [Read More](https://github.com/Confy-Code/the-gym-a2sv-notes/blob/main/Asynchronous%20Programming/await.md)
+
 ---
 
 ## 6. Handling Errors with `try...catch`
