@@ -86,3 +86,12 @@
 45. `POST` → **usually non-idempotent**
 46. `GET`, `PUT`, `DELETE` → **idempotent**
 47. `PATCH` → **depends on the operation**
+48.  **Parallel requests can complete in a different order from the order in which they were started.**
+49.  **`forEach()` does not wait for asynchronous callbacks.**
+50.  **`map()` does not make asynchronous operations serial.**
+51.  **`Promise.all()` allows concurrent operations and preserves the order of the input Promises in its result.**
+52.  **Serial execution means the next operation waits for the previous one.**
+53.  **Reassigning `sequence` extends the Promise chain; without reassignment, every iteration starts from the same original Promise.**
+54.  **Use parallel execution for independent requests.**
+55.  **Use serial execution when operations depend on one another or when execution order itself matters.**
+56.  **For a large number of independent requests, controlled concurrency is often better than either "everything at once" or "strictly one at a time."**
