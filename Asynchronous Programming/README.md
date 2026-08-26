@@ -2,6 +2,8 @@
 
 > **Purpose:** Quick revision notes for understanding how JavaScript handles operations that finish later, especially **Promises, callbacks, Events, XHR, Web worker APIs, and Fetch**.
 
+> Consider upgrading to `Node v22...` as some of the methods that are discussed in this folder aren't compatible with oldest versions.
+
 ---
 
 ### Asynchronous JavaScript
