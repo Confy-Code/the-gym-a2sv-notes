@@ -44,6 +44,23 @@ const results = await Promise.all([fetchUsers(), fetchPosts(), fetchComments()
 * Useful when all tasks are required before continuing.
 * Think: **"I need everything."**
 
+> When you still need anything regardless of what may fail, use `Promise.allSettled()`.
+
+** A HINT ABOUT `Promise.allSettled()`
+---
+- Takes an array of promises too
+- It returns a promise
+- Unlike `Promise.all()`, it waits until all promises have settled (resolved or rejected).
+- When initialized with `await` before, this returns an object
+
+```js
+const result = Promise.allSettled([promise1, promise2, promise3])
+console.log(result) // A promise
+
+const result = await Promise.allSettled([promise1, promise2, promise3])
+console.log(result) // {status: 'fulfilled', value: ...} or {status: 'rejected', reason: ...}
+```
+
 ---
 
 ## 3. Promise Executor Function
