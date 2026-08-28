@@ -28,6 +28,10 @@ If `fetch()` rejects, the `await` turns that rejection into an exception that `c
 
 > Without `await`, the rejections (later exceptions) will not be handled by `catch`
 
+> After `catch` block, there can be added a `finally` block, that executes for no matter what is run between `try` and `catch` blocks.
+
+---
+
 ### 2. What is the difference between f2 and f3 in the following expression: promiseInstance.then(f1, f2).catch(f3)?
 ===========================================
 
