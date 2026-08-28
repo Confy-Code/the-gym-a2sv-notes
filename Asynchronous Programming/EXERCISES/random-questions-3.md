@@ -1,8 +1,8 @@
 ## JAVASCRIPT ASYNCHRONOUS PROGRAMMING - RANDOM QUESTIONS 3
+---
 
-### 1. How can callbacks lead to race conditions and how do you prevent them?
-
-===================================
+**1. How can callbacks lead to race conditions and how do you prevent them?**
+---
 
 A **race condition** can occur when multiple asynchronous operations are running concurrently and the final result depends on **which one finishes first (wins the race)**.
 
@@ -125,9 +125,10 @@ All requests using that signal can be aborted.
 
 > Other techniques beside of the AbortController() are there to help too, but they are kinda complex.
 
-### 2. What are some strategies for handling large numbers of concurrent Promises to avoid overloading the event loop?
+---
 
-===================================================
+**2. What are some strategies for handling large numbers of concurrent Promises to avoid overloading the event loop?**
+---
 
 Consider:
 

@@ -1,9 +1,9 @@
 ## JAVASCRIPT ASYNCHRONOUS PROGRAMMING - RANDOM QUESTIONS 2
 
+---
 
-### 1. When does try/catch capture async errors and when does it not?
-
-======================================
+**1. When does try/catch capture async errors and when does it not?**
+---
 
 The important rule:
 
@@ -32,8 +32,9 @@ If `fetch()` rejects, the `await` turns that rejection into an exception that `c
 
 ---
 
-### 2. What is the difference between f2 and f3 in the following expression: promiseInstance.then(f1, f2).catch(f3)?
-===========================================
+**2. What is the difference between `f2 and f3` in the following expression: `promiseInstance.then(f1, f2).catch(f3)`?**
+---
+
 
 - `f1` runs if the original Promise fulfills.
 
@@ -49,7 +50,7 @@ Important:
 > The error thrown by `f1` goes to the next rejection handler
 
 **WHY MULTIPLE CATCH CLAUSES like `promise.catch(f1).catch(f2).catch(f3)` ?**
-========================================
+---
 
 Multiple `.catch()` calls are useful for **different levels of error handling and recovery**. A `catch` can either **recover**(by returning value), or **re-throw** the new error (by `throw` keyword).
 
@@ -77,9 +78,8 @@ This allows different handlers to deal with different kinds of failures.
 
 ---
 
-### What is the difference between parallelism and concurrency in JavaScript?
-
-============================================
+**What is the difference between parallelism and concurrency in JavaScript?**
+---
 
 1. Concurrency
 
@@ -115,8 +115,6 @@ JavaScript can achieve this using **Web Workers**, ...
 
 ### 3. What is AJAX?
 
-=================
-
 > AJAX stands for **Asynchronous JavaScript and XML**
 
 It is a technique for making asynchronous requests to a server **without requiring a full page reload**.
@@ -127,9 +125,7 @@ It is a technique for making asynchronous requests to a server **without requiri
 Modern AJAX-style applications commonly use `JSON`, `Fetch API`, ...
 
 
-### 4. How does hoisting relate to the execution context?
-
-===================================
+#### 4. How does hoisting relate to the execution context?
 
 Hoisting is closely related to how JavaScript creates an **execution context before executing the code**.
 
@@ -206,7 +202,7 @@ Event-driven programming is a programming model where the flow of the program is
 
 ---
 
-### 5. How does closure relate to the execution context?
+### 6. How does closure relate to the execution context?
 
 ===================================
 

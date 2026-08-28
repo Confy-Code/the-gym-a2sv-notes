@@ -1,8 +1,8 @@
 ## JavaScript Asynchronous Programming - Random Questions 1
+---
 
-=============================================================
-
-### 1. What do you understand about Thenables and what are their relationships to the Promises?
+**1. What do you understand about Thenables and what are their relationships to the Promises?**
+---
 
 A **thenable** is any JavaScript object that has a callable `.then()` method.
 
@@ -71,7 +71,8 @@ Thenable
 
 ---
 
-### 2. What are async generators and iterators, how do they work, and what are their use cases?
+**2. What are async generators and iterators, how do they work, and what are their use cases?**
+---
 
 > For basic synchronous generators and iterators, check them in last sections [here](https://github.com/Confy-Code/the-gym-a2sv-notes/blob/main/EcmaScript_6.md)
 
@@ -186,9 +187,8 @@ Common use cases:
 
 ---
 
-### 2.1 FOR AWAIT...OF
+### 2.1 FOR AWAIT...OF USE?
 
-===================
 
 `for await...of` is used to consume **async iterables**.
 
