@@ -21,4 +21,4 @@ async function usersAddresses(url){
 
 const url = "https://jsonplaceholder.typicode.com/users"
 
-usersAddresses(url).then((data) => console.dir(data, {depth: null}))
+usersAddresses(url).then((data) => console.log(data))
