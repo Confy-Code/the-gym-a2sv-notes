@@ -12,10 +12,13 @@ async function asyncCounter(){
             console.log(num)
             await delay()
         }
+
+        return [1, 2, 3, 4, 5]
+
     }catch(error){
         console.log()
     }
 }
 
 
-asyncCounter()
+asyncCounter().then((arr) => console.log(arr) )
