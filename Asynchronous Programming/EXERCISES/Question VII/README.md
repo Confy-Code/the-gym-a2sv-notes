@@ -1,7 +1,7 @@
 ## ASYNCHRONOUS PROGRAMMING - QUESTION VII
 ---
 
-Write a function usersAddresses that fetches users from this endpoint `https://jsonplaceholder.typicode.com/users` and returns just the addresses of the first 3 users.
+Write a function `usersAddresses` that fetches users from this endpoint `https://jsonplaceholder.typicode.com/users` and returns just the addresses of the first 3 users.
 // The output should look like this
 
 ```js
