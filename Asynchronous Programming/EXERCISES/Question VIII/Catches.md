@@ -184,10 +184,10 @@ controller.next();
 
 resumes the **same generator** from where it previously stopped.
 
-**Note**: You may mistakenly assue that the next() works like the popular next in Pythonic Linked Lists. No. Always link the next() to the original controller (head), instead of the recent instance (like how it is done for linked lists)
+#### Note: You may mistakenly assue that the next() works like the popular next in Pythonic Linked Lists. No. Always link the next() to the original controller (head), instead of the recent instance (like how it is done for linked lists)
 ---
 
-# KEY DIFFERENCE BETWEEN GENERATORS AND THE QUEUE MECHANISM
+### KEY DIFFERENCE BETWEEN GENERATORS AND THE QUEUE MECHANISM
 
 ```text
 Queue mechanism
