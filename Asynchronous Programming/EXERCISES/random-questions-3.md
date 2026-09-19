@@ -157,9 +157,11 @@ Starting thousands of operations simultaneously can:
 
 ---
 **Techniques:**
+- `Deferred Resolution` with `limit` variable defined
+> See how we used this technique in this [Question](https://github.com/Confy-Code/the-gym-a2sv-notes/tree/main/Asynchronous%20Programming/EXERCISES/Question%20VIII)
 - Concurrency pool: allows some maximum number of promises to run (bouncer)
-- Basic idea: we `promise.race()` to free up the spot for the currently executing promises
-- we `promise.all(results)` so as to wait for the final batch of the promises to resolve or reject
+    - Basic idea: we `promise.race()` to free up the spot for the currently executing promises
+    - we `promise.all(results)` so as to wait for the final batch of the promises to resolve or reject
 
 - on Production level, we use libraries like `p-limiter` to highlight this whole scenario is simple terms
 
