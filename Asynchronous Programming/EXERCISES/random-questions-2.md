@@ -112,7 +112,7 @@ This allows different handlers to deal with different kinds of failures.
 **What is the difference between parallelism and concurrency in JavaScript?**
 ---
 
-1. Concurrency
+**1. Concurrency**
 
 Concurrency means multiple tasks can **make progress during overlapping periods of time**.
 
@@ -134,7 +134,7 @@ const results = await Promise.all([p1, p2]);
 > The requests can be in progress at the same time even though JavaScript itself has one main execution thread.
 ---
 
-2. Parallelism
+**2. Parallelism**
 
 Parallelism means tasks are actually executing **simultaneously on multiple processing threads/cores**.
 
@@ -153,10 +153,11 @@ It is a technique for making asynchronous requests to a server **without requiri
 - The word **XML** is historical.
 - AJAX does NOT require XML anymore.
 
-Modern AJAX-style applications commonly use `JSON`, `Fetch API`, ...
+*Modern AJAX-style applications commonly use `JSON`, `Fetch API`, ...*
 
+---
 
-#### 4. How does hoisting relate to the execution context?
+### 4. How does hoisting relate to the execution context?
 
 Hoisting is closely related to how JavaScript creates an **execution context before executing the code**.
 
@@ -266,7 +267,7 @@ JavaScript Engine attaches the `[[ENVIRONMENT]]` property to the inner function;
 - The execution context represents the current execution of code.
   
 - The lexical environment is the structure that stores/links bindings and their outer environments.
-- A closure allows an inner function to retain access to an outer lexical environment, using the `[[ENVIRONMENT]]`` property.
+- A closure allows an inner function to retain access to an outer lexical environment, using the `[[ENVIRONMENT]]` property.
 - A function is popped of the callstack if it returns (execution context), and its environment is garbage collected (Lexical environment - but remains in heap memory)
 - Closure: comes when inner function calls the variables in
 outer function (reference to outer function)
