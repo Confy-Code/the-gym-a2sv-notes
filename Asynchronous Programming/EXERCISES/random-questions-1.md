@@ -184,6 +184,25 @@ Common use cases:
 * streaming API responses
 * reading files/chunks
 * database records, ...
+* Step-by-step Wizards (`Next - Next - Finish`)
+```js
+function* checkoutWizard() {
+  const shipping = yield "SHOW_SHIPPING_FORM";
+  
+  const payment = yield "SHOW_PAYMENT_FORM";
+  
+  const review = yield "SHOW_REVIEW_PAGE";
+  
+  return "ORDER_PLACED";
+}
+
+const wizard = checkoutWizard();
+
+// UI Event Handlers control the iterator:
+wizard.next(); // Step 1: Shows Shipping
+wizard.next(shippingDetails); // Step 2: User clicked "Next", passes shipping data
+wizard.next(paymentDetails);  // Step 3: User clicked "Next", passes payment data
+```
 
 ---
 
