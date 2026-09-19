@@ -1,10 +1,9 @@
 ## JAVASCRIPT ASYNCHRONOUS PROGRAMMING - QUESTION VIII
 
-`fetch()` has no built-in timeout — a hung server leaves your request pending forever. Design a `fetchWithTimeout(url, timeoutMs)` function that rejects if the server hasn't responded in time. Talk through it first: what tool lets you 'race' two things against each other, and what's the second thing you're racing the fetch against?
+Design a `fetchAllWithLimit(urls, limit)` function that fetches every URL in the array, but never has more than `limit` requests in flight at the same time. Talk through your design before writing code — how do you track what's 'in flight'? Do you start all requests and throttle somehow, or pull the next one only when a slot frees up?
 
 **Things to look out for**
----
 
-- If the timeout wins, is the original network request actually cancelled, or just ignored by your code while it keeps running?
-- How would the calling code tell the difference between 'timed out' and 'server returned an error'?
-- What's the real-world tradeoff between a short timeout (snappy failure, more false positives on slow networks) and a long one?
+- What happens to the whole batch if one request fails — does everything stop, or do the others keep going? Is that the right default?
+- How would you guarantee the results array lines up with the original `urls` order, given requests can resolve in any order?
+- At what concurrency limit does raising it stop helping? What's the actual bottleneck — the browser, the server, or the network?
