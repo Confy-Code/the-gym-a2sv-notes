@@ -158,6 +158,8 @@ The result eventually looks like:
 }
 ```
 
+> `done` becomes `true` only when the generator has reached its final value, `value: undefined`
+
 ### Important distinction
 
 ```text
@@ -199,7 +201,7 @@ function* checkoutWizard() {
 const wizard = checkoutWizard();
 
 // UI Event Handlers control the iterator:
-wizard.next(); // Step 1: Shows Shipping
+wizard.next(); // Step 1: Starts the generator - Shows Shipping
 wizard.next(shippingDetails); // Step 2: User clicked "Next", passes shipping data
 wizard.next(paymentDetails);  // Step 3: User clicked "Next", passes payment data
 ```
