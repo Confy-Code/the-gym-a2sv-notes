@@ -34,7 +34,7 @@ If `fetch()` rejects, the `await` turns that rejection into an exception that `c
 
 **2. What is the difference between `f2 and f3` in the following expression: `promiseInstance.then(f1, f2).catch(f3)`?**
 ---
-
+> `f2` handles the rejection of the original Promise, while `f3` handles the exception thrown by either `f1` or `f2`
 
 - `f1` runs if the original Promise fulfills.
 
