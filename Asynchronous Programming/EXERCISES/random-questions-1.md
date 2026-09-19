@@ -217,9 +217,9 @@ Example:
 
 ```js
 async function* numbers() {
-    yield 1;
-    yield 2;
-    yield 3;
+    yield 1; // plain value
+    yield Promise.resolve("Async task")
+    yield Promise.resolve("Second Async task");
 }
 
 async function run() {
@@ -240,7 +240,7 @@ for await...of
       ↓
 gets Symbol.asyncIterator
       ↓
-calls .next()
+calls .next() // stops at the next yield
       ↓
 gets a Promise
       ↓
@@ -267,6 +267,9 @@ is designed to handle asynchronous iteration.
 
 * async iterables
 * regular synchronous iterables
+
+> But the normal `for...of` loop, when they are used to loop through, say Promises, they render `Promise` object instead of
+the actual value.
 
 With a synchronous iterable, it will still await the values if necessary.
 
