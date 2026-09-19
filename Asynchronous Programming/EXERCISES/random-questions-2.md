@@ -34,7 +34,7 @@ If `fetch()` rejects, the `await` turns that rejection into an exception that `c
 
 **2. What is the difference between `f2 and f3` in the following expression: `promiseInstance.then(f1, f2).catch(f3)`?**
 ---
-
+> `f2` handles the rejection of the original Promise, while `f3` handles the exception thrown by either `f1` or `f2`
 
 - `f1` runs if the original Promise fulfills.
 
@@ -49,30 +49,61 @@ Important:
 
 > The error thrown by `f1` goes to the next rejection handler
 
+```js
+const promise1 = Promise.resolve("This is the resolved data")
+
+promise1.then(
+    fn1 = (data) => {
+        console.log(data)
+        throw new Error("fn1 Resolved badly")  // will be catched by fn3, not fn2
+        },
+    fn2 = () => console.log("Reject handler for the promise displaying")  // logs if you change Promise.resolve() to Promise.reject()
+)
+.catch(fn3 = (err) => console.log(`Catching ${err}, from either fn1 or fn2`))
+
+// OUTPUT
+// This is the resolved data
+// Catching Error: fn1 Resolved badly, from either fn1 or fn2
+```
+
 **WHY MULTIPLE CATCH CLAUSES like `promise.catch(f1).catch(f2).catch(f3)` ?**
 ---
 
-Multiple `.catch()` calls are useful for **different levels of error handling and recovery**. A `catch` can either **recover**(by returning value), or **re-throw** the new error (by `throw` keyword).
+Multiple `.catch()` calls are useful for **different levels of error handling and recovery**. A `catch` can either **recover**(by returning value), or **re-throw** the new error (by `throw` keyword), piling up the `catches`.
 
-**Structure:**
+```js
+const promise1 = Promise.reject("This is the rejected data")
 
-```text
-Promise rejects
-      ↓
-catch(f1)
-      ↓
-   recover?
-   /      \
- yes       no
- ↓         ↓
-continue   throw
-           ↓
-       catch(f2)
-           ↓
-       recover?
-           ↓
-       catch(f3)
+promise1.catch( fn1 = () => {
+    console.log("This is gonna re-throw the error, not recover")
+    throw new Error(" Error 1") }
+)
+.catch(fn2 = (err) => {
+    console.log(`Catching fn1 error : ${err}!`)
+    console.log("This is gonna re-throw the error too, not recover")
+    throw new Error(" Error 2 ")
+})
+.catch(fn3 = (err) => {
+    console.log(`Catching fn2 error: ${err}`)
+    console.log("This is gonna finally RECOVER by returning, not re-throwing")
+    return "Finally recovered! This will be handled by 'then()'"
+})
+.then(data => console.log('Message:', data))
+.catch(err => console.log("This won't handle anything now")) // not displaying
+
 ```
+```text
+OUTPUT
+--------
+This is gonna re-throw the error, not recover
+Catching fn1 error : Error:  Error 1!
+This is gonna re-throw the error too, not recover
+Catching fn2 error: Error:  Error 2 
+This is gonna finally RECOVER by returning, not re-throwing
+Message: Finally recovered! This will be handled by 'then()'
+```
+
+
 
 This allows different handlers to deal with different kinds of failures.
 
@@ -81,7 +112,7 @@ This allows different handlers to deal with different kinds of failures.
 **What is the difference between parallelism and concurrency in JavaScript?**
 ---
 
-1. Concurrency
+**1. Concurrency**
 
 Concurrency means multiple tasks can **make progress during overlapping periods of time**.
 
@@ -103,7 +134,7 @@ const results = await Promise.all([p1, p2]);
 > The requests can be in progress at the same time even though JavaScript itself has one main execution thread.
 ---
 
-2. Parallelism
+**2. Parallelism**
 
 Parallelism means tasks are actually executing **simultaneously on multiple processing threads/cores**.
 
@@ -122,10 +153,11 @@ It is a technique for making asynchronous requests to a server **without requiri
 - The word **XML** is historical.
 - AJAX does NOT require XML anymore.
 
-Modern AJAX-style applications commonly use `JSON`, `Fetch API`, ...
+*Modern AJAX-style applications commonly use `JSON`, `Fetch API`, ...*
 
+---
 
-#### 4. How does hoisting relate to the execution context?
+### 4. How does hoisting relate to the execution context?
 
 Hoisting is closely related to how JavaScript creates an **execution context before executing the code**.
 
@@ -195,16 +227,14 @@ A better explanation is:
 ---
 
 ### 5. What is event-driven programming?
-
-=============================
+---
 
 Event-driven programming is a programming model where the flow of the program is determined by **events** like `click, mouse movement, ...`
 
 ---
 
 ### 6. How does closure relate to the execution context?
-
-===================================
+---
 
 A **closure** occurs when a function remembers and can access variables from its parent's **lexical** environment, even after the outer(parent)  function has finished executing.
 
@@ -237,7 +267,7 @@ JavaScript Engine attaches the `[[ENVIRONMENT]]` property to the inner function;
 - The execution context represents the current execution of code.
   
 - The lexical environment is the structure that stores/links bindings and their outer environments.
-- A closure allows an inner function to retain access to an outer lexical environment, using the `[[ENVIRONMENT]]`` property.
+- A closure allows an inner function to retain access to an outer lexical environment, using the `[[ENVIRONMENT]]` property.
 - A function is popped of the callstack if it returns (execution context), and its environment is garbage collected (Lexical environment - but remains in heap memory)
 - Closure: comes when inner function calls the variables in
 outer function (reference to outer function)

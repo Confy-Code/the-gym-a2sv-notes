@@ -158,6 +158,8 @@ The result eventually looks like:
 }
 ```
 
+> `done` becomes `true` only when the generator has reached its final value, `value: undefined`
+
 ### Important distinction
 
 ```text
@@ -184,6 +186,25 @@ Common use cases:
 * streaming API responses
 * reading files/chunks
 * database records, ...
+* Step-by-step Wizards (`Next - Next - Finish`)
+```js
+function* checkoutWizard() {
+  const shipping = yield "SHOW_SHIPPING_FORM";
+  
+  const payment = yield "SHOW_PAYMENT_FORM";
+  
+  const review = yield "SHOW_REVIEW_PAGE";
+  
+  return "ORDER_PLACED";
+}
+
+const wizard = checkoutWizard();
+
+// UI Event Handlers control the iterator:
+wizard.next(); // Step 1: Starts the generator - Shows Shipping
+wizard.next(shippingDetails); // Step 2: User clicked "Next", passes shipping data
+wizard.next(paymentDetails);  // Step 3: User clicked "Next", passes payment data
+```
 
 ---
 
@@ -196,9 +217,9 @@ Example:
 
 ```js
 async function* numbers() {
-    yield 1;
-    yield 2;
-    yield 3;
+    yield 1; // plain value
+    yield Promise.resolve("Async task")
+    yield Promise.resolve("Second Async task");
 }
 
 async function run() {
@@ -219,7 +240,7 @@ for await...of
       ↓
 gets Symbol.asyncIterator
       ↓
-calls .next()
+calls .next() // stops at the next yield
       ↓
 gets a Promise
       ↓
@@ -246,6 +267,9 @@ is designed to handle asynchronous iteration.
 
 * async iterables
 * regular synchronous iterables
+
+> But the normal `for...of` loop, when they are used to loop through, say Promises, they render `Promise` object instead of
+the actual value.
 
 With a synchronous iterable, it will still await the values if necessary.
 
