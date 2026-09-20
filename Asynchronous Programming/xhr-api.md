@@ -162,6 +162,9 @@ For requests carrying data, such as POST:
 
 ```javascript
 xhr.open("POST", url);
+
+xhr.setrequestHeaders('Content-Type', 'application/json; charset=UTF-8')  // Setting the Request Headers
+
 xhr.send(data);
 ```
 
