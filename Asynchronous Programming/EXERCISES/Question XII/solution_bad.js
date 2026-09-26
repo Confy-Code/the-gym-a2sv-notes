@@ -30,7 +30,7 @@ async function pollUntilDone(maxAttempts){
             }
 
             catch(error) {
-                if(error == "AbortError"){
+                if(error.name == "AbortError"){
                     console.log("Request aborted due to timeout")
                 }
                 
