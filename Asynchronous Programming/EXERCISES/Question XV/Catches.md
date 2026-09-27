@@ -15,8 +15,6 @@
 
 > Try it with [1, 0]. Will it be sorted ? No
 
-> This is because, delaying for 1ms is relatively a very short time, hence `1` will be logged before `0`. But if we add a
-constant even if it would be `el + 1`, `0` have time to step out before `1` does.
+> This is because delaying by 1 ms is a relatively short time; hence, `1` will be logged before `0`. But if we add a constant, even if it is `el + 1`, `0` will have time to step out before `1` does.
 
-4. This Novelty sorting is possible because `.forEach()` loops through the elements of the array at a high speed, and this makes
-all elements of the array to be accessed almost at the same time.
+4. This Novelty sorting is possible because `.forEach()` loops through the elements of the array at high speed, and this makes all elements of the array be able to be accessed almost at the same time.
