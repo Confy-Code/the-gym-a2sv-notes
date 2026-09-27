@@ -1,3 +1,5 @@
+// PREDICT THE OUTPUT
+
 console.log("1");
 setTimeout(() => {
   console.log("2");
