@@ -166,3 +166,48 @@ Starting thousands of operations simultaneously can:
 - on Production level, we use libraries like `p-limiter` to highlight this whole scenario is simple terms
 
 > This section of handling concurrency will be later broaden up.
+
+---
+
+### 3. What is a deadlock in Promises?
+
+A deadlock is the situation in which, PromiseA's resolution depends on the PromiseB's, yet that of PromiseB's depend 
+also, on PromiseA's. This is called **Circular Promise dependency**
+
+```js
+let resolveA, resolveB;
+
+const promiseA = new Promise((resolve) => {resolveA = resolve})
+const promiseB = new Promise((resolve) => {resolveB = resolve})
+
+promiseA.then((msg) => {  // if promiseA resolves, resolve promiseB
+    console.log(msg)
+    resolveB("B is done")  // same as resolve(), because resolveA = resolve
+    })
+promiseB.then((msg) => {  // if promiseB resolves, resolve promiseA
+    console.log(msg)
+    resolveA("A is done")
+    })
+```
+
+As you see, each promise depends on each other, so the program will just hang up with no real response.
+Mitigate this conflict by kick-starting one of the promise's resolution.
+
+```js
+let resolveA, resolveB;
+
+const promiseA = new Promise((resolve) => {resolveA = resolve})
+const promiseB = new Promise((resolve) => {resolveB = resolve})
+
+promiseA.then((msg) => { // 5. A has resolved
+    console.log(msg) // 6. "A is done"
+    resolveB("B is done") // 7. tries settling B again, but a promise can be
+                                // settled only once, so this one is ignored
+    })
+promiseB.then((msg) => {  // 2. B has resolved
+    console.log(msg)  // 3. "B starts"
+    resolveA("A is done") // 4. resolves promiseA with "A is done"
+    })
+
+resolveB("B starts")  // 1. Kick-starting (resolves promiseB)
+```
